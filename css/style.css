@@ -59,8 +59,23 @@ font-style: italic;
   .navbg{
   /*  background-color:	
     #000066;*/
-    background-color:black;
+    background-color:white;
     
+  }
+  .navbg a{
+
+    display: block;
+ 
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    /*color: darkblue;
+    color: golden;*/
+    color:red;
+    text-align: left;
+    float: left;
+    font-size: large;
+    overflow: absolute;
   }
   
 #eimg{
@@ -79,10 +94,12 @@ font-style: italic;
   nav a:hover{
    
     width: auto;
-    transition: 0.5s;
+    transition: 1ms;
     text-transform:uppercase ;
-    text-align: center;
-    border: 1px solid red   ;
+
+    border: 1px solid black  ;
+    color: blue;
+    
  
   }
   #imgs{
