@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Top front-end Frame Works</title>
+  <link rel="icon" href="./images/molus.jpg">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+
+
+    .ae {
+      text-decoration: none;
+      color: black;
+    }
+  
+
+   
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="css\navbar.css" rel="stylesheet">
+</head> <body>
+  
+  <!----NAv bar-->
+  <nav class="navbar navh sticky-top navbar-expand-lg navbar-dark navbg border  border-3 " aria-label="Eighth navbar example">
+    <div class="container-fluid">
+      <div class=" pe-2">
+       <img src="images/molus.jpg" alt="logo" class="img-responsive"></a></a></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav me-auto mb-2 px-5 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active pe-5" aria-current="page" href="index.html" style="color: red;">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color: red;" href="angular.html"  id="dropdown07"style="color: white;" data-bs-toggle="dropdown"
+              aria-expanded="false">Frame Work</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown07">
+              <li><a class="dropdown-item" href="angular.html">Angular</a></li>
+              <li><a class="dropdown-item" href="react.html">React</a></li>
+              <li><a class="dropdown-item" href="svelte.html">Svelte</a></li>
+              <li><a class="dropdown-item" href="vueJS.html">Vue.js</a></li>
+              <li><a class="dropdown-item" href="jquery.html">jQuery</a></li>
+              <li><a class="dropdown-item" href="ember.html">Ember.js</a></li>
+            </ul>
+          </li>
+        </ul>
+        <li class="nav-item d-flex">
+          <a class="nav-link active"  aria-current="page" href="signin.html">SignIn</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link active"  aria-current="page" href="signup.html">SignUp</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+</main>
+<section  >
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <h2>SignUp</h2>
+        <form>
+          <div class="mb-3 mt-3 ">
+            <div >
+              <label for="pwd">User Name</label>
+              <input type="text" class="form-control" id="pwd" placeholder="Enter Usename" name="pswd">
+            </div>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+          </div>
+          <div class="mb-3">
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Show password
+            </label>
+          </div>
+         
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="button">Submit</button>
+         
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // Password strength meter
+  const passwordInput = document.getElementById('password');
+  const passwordStrength = document.getElementById('passwordStrength');
+  const strengthBar = document.querySelector('.strength-bar');
+  const instruction = document.querySelector('.instruction');
+
+  passwordInput.addEventListener('input', function () {
+    const password = passwordInput.value;
+    if (password.trim() !== '') {
+      passwordStrength.style.display = 'block';
+      instruction.style.display = 'block'; // Show instruction
+      const strength = calculatePasswordStrength(password);
+      updateStrengthMeter(strength);
+      updateInstruction(strength);
+    } else {
+      passwordStrength.style.display = 'none';
+      instruction.style.display = 'none'; // Hide instruction
+    }
+  });
+
+  function calculatePasswordStrength(password) {
+    // password strength calculation logic 
+    
+    const length = password.length;
+    if (length < 6) {
+      return 'Weak';
+    } else if (length < 10) {
+      return 'Moderate';
+    } else {
+      return 'Strong';
+    }
+  }
+
+  function updateStrengthMeter(strength) {
+    const percentage = {
+      'Weak': 25,
+      'Moderate': 50,
+      'Strong': 100
+    };
+
+    strengthBar.style.width = `${percentage[strength]}%`;
+    strengthBar.className = `strength-bar ${strength.toLowerCase()}`;
+    passwordStrength.querySelector('.strength-level').innerHTML = strength;
+  }
+
+  function updateInstruction(strength) {
+    const instructionText = {
+      'Weak': 'Password must contain special character, number, capital and small letters.',
+      'Moderate': 'Password could be stronger. Add special character, number, capital and small letters.',
+      'Strong': 'Password is strong! Well done.'
+    };
+
+    instruction.innerHTML = `<p>${instructionText[strength]}</p>`;
+  }
+</script>
+</body>
+
+</html>
