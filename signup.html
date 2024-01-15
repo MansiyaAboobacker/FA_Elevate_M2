@@ -15,149 +15,7 @@
   <!-- Bootstrap core CSS -->
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    p {
-      text-align: justify;
-    }
-
-
-    .ae {
-      text-decoration: none;
-      color: black;
-    }
-  
-    nav {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      width: 100%;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 800px;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .image-container {
-      flex: 1;
-      /* You can add additional styling for the image container */
-    }
-
-    .form-container {
-      flex: 1;
-      max-width: 400px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    input, select {
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .password-strength {
-      display: none;
-      margin-top: 15px;
-      position: relative;
-    }
-
-    .strength-bar {
-      height: 20px;
-      border-radius: 5px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-    }
-
-    .strength-level {
-      font-weight: bold;
-    }
-
-    .instruction {
-      display: none;
-      margin-top: 15px;
-      background-color: #f8d7da;
-      border: 1px solid #f5c6cb;
-      border-radius: 5px;
-      padding: 10px;
-      color: #721c24;
-    }
-
-    .weak {
-      background-color: red;
-    }
-
-    .moderate {
-      background-color: yellow;
-    }
-
-    .strong {
-      background-color: green;
-    }
-  </style>
+  <link rel="stylesheet" href="css/sp.css">
 </head>
 <body>
   <!----NAv bar-->
@@ -197,110 +55,69 @@
       </div>
     </div>
   </nav>
+
   <div class="container">
     <div class="image-container">
-      <!--  image -->
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-      class="img-fluid" alt="Phone image">
+          <!--  image -->
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+        
     </div>
 
     <div class="form-container">
-      <form id="registrationForm" action="login.html">
-        <h2>Registration Form</h2>
+      <form id="registrationForm" onsubmit="return validateForm()" action="userPage.html">
+        <h2>Sign Up</h2>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name" class="label">Name:</label>
+        <input type="text" id="name" name="name" class="input" required>
+        <div id="nameValidation" class="validation-message"></div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="password" class="label">Password:</label>
+        <input type="password" id="password" name="password" class="input" required>
         <div class="password-strength" id="passwordStrength">
           <div class="strength-bar"></div>
           <span class="strength-level"></span>
         </div>
+        <div id="passwordValidation" class="validation-message"></div>
         <div class="instruction"></div>
 
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <label for="confirmPassword" class="label">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="input" required>
+        <div id="confirmPasswordValidation" class="validation-message"></div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email" class="label">Email:</label>
+        <input type="email" id="email" name="email" class="input" required>
+        <div id="emailValidation" class="validation-message"></div>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <label for="phone" class="label">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" class="input" required>
+        <div id="phoneValidation" class="validation-message"></div>
 
-        <label for="selection">Selection:</label>
-        <select id="selection" name="selection" required>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <label for="selection" class="label">interested FrameWork:</label>
+        <select id="selection" name="selection" class="input" required>
+          <option value="option1">Angular</option>   
+          <option value="option2">ReactJS</option>
+          <option value="option3">Svelte</option>
+          <option value="option4">Vue.js</option>
+          <option value="option5">jQuery</option>
+          <option value="option6">Ember.js</option>
         </select>
 
-        <label>Do you like it?</label>
-        <input type="radio" id="yes" name="likeIt" value="yes" checked>
+        <label class="label">Do you want to part of our team :</label>
+        <div >
         <label for="yes">Yes</label>
-        <input type="radio" id="no" name="likeIt" value="no">
-        <label for="no">No</label>
-
+        <input type="radio" id="yes" name="likeIt" value="yes" checked></div>
+       <div ><label for="no">No</label>
+        <input type="radio" id="no" name="likeIt" value="no"></div>
+        
+       
         <button type="submit">Submit</button>
+
+       
       </form>
     </div>
   </div>
 
-  <script>
-    // Password strength meter
-    const passwordInput = document.getElementById('password');
-    const passwordStrength = document.getElementById('passwordStrength');
-    const strengthBar = document.querySelector('.strength-bar');
-    const instruction = document.querySelector('.instruction');
-
-    passwordInput.addEventListener('input', function () {
-      const password = passwordInput.value;
-      if (password.trim() !== '') {
-        passwordStrength.style.display = 'block';
-        instruction.style.display = 'block'; // Show instruction
-        const strength = calculatePasswordStrength(password);
-        updateStrengthMeter(strength);
-        updateInstruction(strength);
-      } else {
-        passwordStrength.style.display = 'none';
-        instruction.style.display = 'none'; // Hide instruction
-      }
-    });
-
-    function calculatePasswordStrength(password) {
-      // password strength calculation 
-   
-      const length = password.length;
-      if (length < 6) {
-        return 'Weak';
-      } else if (length < 10) {
-        return 'Moderate';
-      } else {
-        return 'Strong';
-      }
-    }
-
-    function updateStrengthMeter(strength) {
-      const percentage = {
-        'Weak': 25,
-        'Moderate': 50,
-        'Strong': 100
-      };
-
-      strengthBar.style.width = `${percentage[strength]}%`;
-      strengthBar.className = `strength-bar ${strength.toLowerCase()}`;
-      passwordStrength.querySelector('.strength-level').innerHTML = strength;
-    }
-
-    function updateInstruction(strength) {
-      const instructionText = {
-        'Weak': 'Password must contain special character, number, capital and small letters.',
-        'Moderate': 'Password could be stronger. Add special character, number, capital and small letters.',
-        'Strong': 'Password is strong! Well done.'
-      };
-
-      instruction.innerHTML = `<p>${instructionText[strength]}</p>`;
-    }
-  </script>
+  <script src="css/script.js"></script>
 </body>
 </html>

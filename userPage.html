@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Top front-end Frame Works</title>
+    <link rel="icon" href="./images/molus.jpg">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .profile-nav, .profile-info{
+        margin-top:30px;   
+    }
+    
+    .profile-nav .user-heading {
+        background: #fbc02d;
+        color: #fff;
+        border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .profile-nav .user-heading.round a  {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border: 10px solid rgba(255,255,255,0.3);
+        display: inline-block;
+    }
+    
+    .profile-nav .user-heading a img {
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+    }
+    
+    .profile-nav .user-heading h1 {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+    
+    .profile-nav .user-heading p {
+        font-size: 12px;
+    }
+    
+    .profile-nav ul {
+        margin-top: 1px;
+    }
+    
+    .profile-nav ul > li {
+        border-bottom: 1px solid #ebeae6;
+        margin-top: 0;
+        line-height: 30px;
+    }
+    
+    .profile-nav ul > li:last-child {
+        border-bottom: none;
+    }
+    
+    .profile-nav ul > li > a {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        color: #89817f;
+        border-left: 5px solid #fff;
+    }
+    
+    .profile-nav ul > li > a:hover, .profile-nav ul > li > a:focus, .profile-nav ul li.active  a {
+        background: #f8f7f5 !important;
+        border-left: 5px solid #fbc02d;
+        color: #89817f !important;
+    }
+    
+    .profile-nav ul > li:last-child > a:last-child {
+        border-radius: 0 0 4px 4px;
+        -webkit-border-radius: 0 0 4px 4px;
+    }
+    
+    .profile-nav ul > li > a > i{
+        font-size: 16px;
+        padding-right: 10px;
+        color: #bcb3aa;
+    }
+    
+   
+    
+    
+    .profile-info .panel-footer {
+        background-color:#f8f7f5 ;
+        border-top: 1px solid #e7ebee;
+    }
+    
+    .profile-info .panel-footer ul li a {
+        color: #7a7a7a;
+    }
+    
+    .bio-graph-heading {
+        background: #fbc02d;
+        color: #fff;
+        text-align: center;
+        font-style: italic;
+        padding: 40px 110px;
+        border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        font-size: 16px;
+        font-weight: 300;
+    }  
+   </style>
+</head>
+<body>
+     <!----NAv bar-->
+  <nav class="navbar navh sticky-top navbar-expand-lg navbar-dark navbg border  border-3 " aria-label="Eighth navbar example">
+    <div class="container-fluid">
+      <div class=" pe-2">
+       <img src="images/molus.jpg" alt="logo" class="img-responsive"></a></a></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav me-auto mb-2 px-5 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active pe-5" aria-current="page" href="index.html" style="color: red;">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color: red;" href="angular.html"  id="dropdown07"style="color: white;" data-bs-toggle="dropdown"
+              aria-expanded="false">Frame Work</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown07">
+              <li><a class="dropdown-item" href="angular.html">Angular</a></li>
+              <li><a class="dropdown-item" href="react.html">React</a></li>
+              <li><a class="dropdown-item" href="svelte.html">Svelte</a></li>
+              <li><a class="dropdown-item" href="vueJS.html">Vue.js</a></li>
+              <li><a class="dropdown-item" href="jquery.html">jQuery</a></li>
+              <li><a class="dropdown-item" href="ember.html">Ember.js</a></li>
+            </ul>
+          </li>
+        </ul>
+       
+        <li class="nav-item d-flex">
+          <a class="nav-link active"  aria-current="page" href="index.html">SignOut</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+  <script>
+    // Function to get URL parameters by name
+    function getParameterByName(name,email,url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }</script></h1>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+<div class="row">
+  <div class="profile-nav col-md-3">
+      <div class="panel">
+          <div class="user-heading round">
+              <a href="#">
+                  <img src="images/profilefoto.jpg" alt="">
+              </a>
+              <h5><script>
+               var name = getParameterByName('name');
+            
+                // Display the welcome message
+                document.write('<h4> ' + name + '</h4>');</script></h1>
+              
+          </div>
+
+          <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="#"> <i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">9</span></a></li>
+              <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="profile-info col-md-9">
+      <div class="panel">
+          
+          <footer class="bio-graph-heading">
+            <script>
+               
+                // Get the name from the URL
+                var name = getParameterByName('name');
+            
+                // Display the welcome message
+                document.write('<h2>Welcome, ' + name + '!</h2>');
+
+                var email = getParameterByName('email');
+             
+             // Display the welcome message
+             document.write('<i> ' + email + '</i>');
+              </script>
+          </footer>
+      </div>
+      <div class="panel">
+          <div class="panel-footer">
+            <form>
+                <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area"></textarea>
+            
+               <button class="btn btn-warning pull-right">Post</button>
+               <ul class="nav nav-pills">
+                   <li>
+                       <a href="#"><i class="fa fa-map-marker"></i></a>
+                   </li>
+                   <li>
+                       <a href="#"><i class="fa fa-camera"></i></a>
+                   </li>
+                   <li>
+                       <a href="#"><i class=" fa fa-film"></i></a>
+                   </li>
+                   <li>
+                       <a href="#"><i class="fa fa-microphone"></i></a>
+                   </li>
+               </ul>
+            </form>
+          </div>
+          
+</body>
+</html>
