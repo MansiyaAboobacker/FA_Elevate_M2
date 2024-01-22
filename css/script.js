@@ -99,15 +99,15 @@ function updateInstruction(strength) {
 function calculatePasswordStrength(password) {
   const length = password.length;
   const hasLetters = /[a-zA-Z]/.test(password);
-  const hasNumbers = /\d/.test(password);
+  const hasNumbers = /[0-9]/.test(password);
   const hasSpecialChars = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
 
-  if (length < 8 || (!hasLetters && !hasNumbers && !hasSpecialChars)) {
+  if (length < 6 || (!hasLetters && !hasNumbers && !hasSpecialChars)) {
     return 'Weak';
-  } else if (length <= 8 || ((hasLetters && hasNumbers) || (hasLetters && hasSpecialChars) || (hasNumbers && hasSpecialChars))) {
-    return 'Moderate';
-  } else {
+  } else if (length >= 6 && ((hasLetters && hasNumbers && hasSpecialChars))) {
     return 'Strong';
+  } else {
+    return 'Moderate';
   }
 }
 

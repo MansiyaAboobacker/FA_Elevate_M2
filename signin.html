@@ -19,6 +19,11 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
+     .error-message {
+      color: red;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -91,8 +96,7 @@
     </div>
   </div>
 </nav>
-</main>
-<section >
+<section>
   <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class="col-md-8 col-lg-7 col-xl-6">
@@ -100,18 +104,19 @@
           class="img-fluid" alt="Phone image">
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-        <form>
+        <form id="loginForm" onsubmit="return validateForm()" action="userPage.html">
           <h2 class="pb-3">SignIn</h2>
+
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form1Example13" class="form-control form-control-lg" placeholder="Enter Email"/>
-           
+            <input type="email" id="form1Example13" class="form-control form-control-lg" placeholder="Enter Email" required />
+            <div id="emailValidation" class="validation-message error-message"></div>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg" placeholder="Enter password"/>
-           
+            <input type="password" id="form1Example23" class="form-control form-control-lg" placeholder="Enter password" required />
+            <div id="passwordValidation" class="validation-message error-message"></div>
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
@@ -120,13 +125,12 @@
               <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
               <label class="form-check-label" for="form1Example3"> Remember me </label>
             </div>
-            <a href="#!">Forgot password?</a>
+            <a href="forgotPass.html" style="text-decoration: solid; color: green;">Forgot password?</a>
           </div>
 
           <!-- Submit button -->
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button">Submit</button>
-           
+            <button class="btn btn-primary" type="submit">Submit</button>
           </div>
 
           <div class="divider d-flex align-items-center my-4">
@@ -134,23 +138,59 @@
           </div>
 
           <div class="d-grid gap-2">
-            <button class="btn btn-secondary" type="button"> <i class="fab fa-facebook-f me-2"></i>Continue with Facebook</button>
-           
-          </div>
-           
-        <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button"> <i class="fab fa-twitter me-2"></i>Continue with Twitter</a></button>
-           
+            <button class="btn btn-secondary" type="button" onclick="redirectToFacebookPage()"> <i class="fab fa-facebook-f me-2"></i>Continue with Facebook</button>
           </div>
 
-          
-            
-
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" onclick="redirectToTwitterPage()"> <i class="fab fa-twitter me-2"></i>Continue with Twitter</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  function validateForm() {
+    var email = document.getElementById('form1Example13').value;
+    var password = document.getElementById('form1Example23').value;
+    var isValid = true;
+
+    // Simple email validation
+    if (!validateEmail(email)) {
+      document.getElementById('emailValidation').innerHTML = 'Please enter a valid email address.';
+      isValid = false;
+    } else {
+      document.getElementById('emailValidation').innerHTML = '';
+    }
+
+    // Simple password validation
+    if (password.length < 6) {
+      document.getElementById('passwordValidation').innerHTML = 'Password must be at least 6 characters long.';
+      isValid = false;
+    } else {
+      document.getElementById('passwordValidation').innerHTML = '';
+    }
+
+    return isValid;
+  }
+
+  function validateEmail(email) {
+    // Simple email validation using a regular expression
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  function redirectToFacebookPage() {
+        // Replace 'facebookPage.html' with the actual page you want to redirect to
+        window.location.href = 'https://www.facebook.com/';
+      }
+      function redirectToTwitterPage() {
+        // Replace 'facebookPage.html' with the actual page you want to redirect to
+        window.location.href = 'https://twitter.com/i/flow/login';
+      }
+</script>
+</main>
+
 </body>
 
 </html>
